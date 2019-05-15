@@ -12,7 +12,7 @@ Redis 5.0 부터 지원된 자료형태 [Redis reference documentation](https://
 
 ### 사용법
 
-* 일단 Redis 5.0 + 는 window 지원이 안됨 (좌절했으나 윈도우에 우분투 지원) -> [윈도우 10 WSL 사용](<https://docs.microsoft.com/ko-kr/windows/wsl/install-win10>)
+* 일단 Redis 5.0 + 는 window 지원이 안된다고 했다. 좌절했다. 그래서 퇴근했다. 주말에 생각해보니 윈도우에 우분투가 지원되고 있었다. -> [윈도우 10 WSL 사용](<https://docs.microsoft.com/ko-kr/windows/wsl/install-win10>)
 * Jedis 와 Lettuce  가 있는데 spring-data-redis 에서 아직 stream 형태는 Lettuce 만 지원해준다.
 
 > Redis Stream support is currently only available through the Lettuce client as it is not yet supported by Jedis.
