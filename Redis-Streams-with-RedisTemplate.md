@@ -78,4 +78,27 @@ StreamOperations sop = redisTemplate.opsForStream();
 ### 더 자세한 자료는 [redis-streams.adoc](<https://github.com/spring-projects/spring-data-redis/blob/master/src/main/asciidoc/reference/redis-streams.adoc>)
 
 
-
+## 주의 닥친위기
+SNAPSHOT 버전이여서 수시로 업데이트를 한다 ... 그래서 가끔 이런 에러가 나오는데 
+```
+* What went wrong:
+Could not resolve all files for configuration ':compileClasspath'.
+> Could not find spring-data-parent.pom (org.springframework.data.build:spring-data-parent:2.2.0.BUILD-SNAPSHOT:20190514.161001-386).
+  Searched in the following locations:
+      https://repo.spring.io/libs-snapshot/org/springframework/data/build/spring-data-parent/2.2.0.BUILD-SNAPSHOT/spring-data-parent-2.2.0.BUILD-20190514.012300-384.pom
+> Could not find spring-data-redis.jar (org.springframework.data:spring-data-redis:2.2.0.BUILD-SNAPSHOT:20190514.161221-627).
+  Searched in the following locations:
+      https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-redis/2.2.0.BUILD-SNAPSHOT/spring-data-redis-2.2.0.BUILD-20190514.032843-625.jar
+> Could not find spring-data-keyvalue.jar (org.springframework.data:spring-data-keyvalue:2.2.0.BUILD-SNAPSHOT:20190514.161156-711).
+  Searched in the following locations:
+      https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-keyvalue/2.2.0.BUILD-SNAPSHOT/spring-data-keyvalue-2.2.0.BUILD-20190514.032540-708.jar
+> Could not find spring-data-commons-latest.integration.jar (org.springframework.data:spring-data-commons:2.2.0.BUILD-SNAPSHOT:20190514.161041-709).
+  Searched in the following locations:
+      https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-commons/2.2.0.BUILD-SNAPSHOT/spring-data-commons-2.2.0.BUILD-20190514.032401-706-latest.integration.jar
+> Could not find spring-data-commons.jar (org.springframework.data:spring-data-commons:2.2.0.BUILD-SNAPSHOT:20190514.161041-709).
+  Searched in the following locations:
+      https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-commons/2.2.0.BUILD-SNAPSHOT/spring-data-commons-2.2.0.BUILD-20190514.032401-706.jar
+```
+SNANPSHOT 버전은 저장소에 하나 업데이트하면 하나 지우고 해서 이전 url 기록을 찾다가 못찾는다.
+따라서 이런식으로 하면된다.
+gradlew build --refresh-dependencies
