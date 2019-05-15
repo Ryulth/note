@@ -99,6 +99,10 @@ Could not resolve all files for configuration ':compileClasspath'.
   Searched in the following locations:
       https://repo.spring.io/libs-snapshot/org/springframework/data/spring-data-commons/2.2.0.BUILD-SNAPSHOT/spring-data-commons-2.2.0.BUILD-20190514.032401-706.jar
 ```
-SNANPSHOT 버전은 저장소에 하나 업데이트하면 하나 지우고 해서 이전 url 기록을 찾다가 못찾는다.
-따라서 이런식으로 하면된다.
+SNANPSHOT 버전은 저장소에 하나 업데이트하면 하나 지우고 해서 이전 url 기록을 찾다가 못찾는다.<br>
+따라서 이런식으로 하면된다.<br>
+```
 gradlew build --refresh-dependencies
+```
+
+
