@@ -21,5 +21,8 @@ spring.profiles.active=local
 gradle bootRun --args='--spring.profiles.active=local'
 ```
 
+아니면 1번 방법으로 적용 시켜놓고 배포 버전일 때만 args 를 주어도 된다.
+
+
 더 많지만 나중에 .. 
 
