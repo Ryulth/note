@@ -1,6 +1,7 @@
 # JAVA VERSION
 
-
+## JAVA 7
+string constant pool 의 위치가 perm -> Heap 으로 변경 
 
 ## JAVA 9
 
