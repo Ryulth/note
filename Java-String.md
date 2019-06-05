@@ -71,7 +71,7 @@ System.out.println(c); // "DogCat"
 
 수정가능한 문자열 객체라고 보면 될것이다. 그래서 변경작업에 대해 새로 객체를 할당하는 오버헤드가 적다. 따라서 문자열 연산이 많을 경우 사용하면 매우 이득이다.
 
-저 둘의 차이는 StringBuffer 는 `ThreadSafe` 하다는 점이다.  따라서 멀티스레드 환경에서는 StringBuffer 를 사용하면 좋다. 그런데 웹 어플리케이션에서는 대부분 멀티스레드 환경이고 개발자가 판단하기 어려운 경우 StringBuffer 를 사용하자. 저 둘의 성능차이는 오류나서 고생하는 것을 감당할만 하다. 뭐 알고리즘이나 단순 계산하는 로직일 경우 StringBuilder 를 사용하면된다. 
+저 둘의 차이는 StringBuffer 는 `ThreadSafe` 하다는 점이다. 둘 다 슈퍼클래스는 AbstractStringBuilder로써 구현한 abstract method는 같다. 하지만 `StringBuffer`는 내부적인 함수에 `synchronized`가 걸려있다. 따라서 멀티스레드 환경에서는 `StringBuffer` 를 사용하면 좋다. 그런데 웹 어플리케이션에서는 대부분 멀티스레드 환경이고 개발자가 판단하기 어려운 경우 StringBuffer 를 사용하자. 저 둘의 성능차이는 오류나서 고생하는 것을 감당할만 하다. 뭐 알고리즘이나 단순 계산하는 로직일 경우 StringBuilder 를 사용하면된다. 
 
 그런데 특이점은 Java 8 까지  `+` 경우 내부적으로는 StringBuilder 을 사용한다고 한다. 그러면 굳이 StringBuilder 을 선언해서 쓸 필요가 없지 않을까? 라는 생각도 들지만 + 연산 할때마다 새로운 StringBuilder 객체를 생성하기 때문에 개발자 스스로 한번 선언한 후에 `.append()` 메소드로 작업하는게 성능향상에 좋다. 특히 쿼리문 작성시 가독성을 높이려고 `+` 연산자가 많이 들어갈 때가 있는데 밑의 사례처럼 작성하라
 
