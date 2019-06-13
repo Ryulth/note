@@ -36,7 +36,7 @@ System.out.println(System.identityHashCode(b)); // 1163157884
 // 뒤의 숫자 값은 다를 수 있음
 ```
 
-### 어 나는 `==` 으로 비교했는데 `true` 가 나온다? 너가 틀린 거 아니냐?
+### 어 나는 `==` 으로 비교했는데 `true` 가 나온다? 이상한데? 
 
 라고 할 수 있다. 예시로 생각나는게 없어서 이런 개똥같은 코드( [Integer 연산이 들어있고](<https://dzone.com/articles/java-performance-notes-autoboxing-unboxing>), 무한루프의 가능성도 있기 때문) 를 짜보자.
 
