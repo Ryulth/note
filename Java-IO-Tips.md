@@ -1,4 +1,4 @@
-# JAVA 입출력 팁
+# JAVA IO Tips
 
 ## 입력
 
